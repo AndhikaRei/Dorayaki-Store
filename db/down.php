@@ -1,23 +1,16 @@
 <?php
 
 // Import requirement.
-require_once __DIR__."config.php";
+require_once __DIR__."/config.php";
 
-// Create account table.
-$db->query('CREATE TABLE IF NOT EXISTS "Akun" (
-  "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-  "email" VARCHAR NOT NULL,
-  "username" VARCHAR UNIQUE NOT NULL,
-  "password" VARCHAR NOT NULL,
-  "is_admin" INTEGER NOT NULL CHECK (is_admin IN (0, 1)) DEFAULT 0
-)');
+// Drop account table.
+$db->query('DROP TABLE IF EXISTS "Akun"');
 
-// Create dorayaki table.
-$db->query('CREATE TABLE IF NOT EXISTS "Dorayaki" (
-  "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-  "nama" VARCHAR NOT NULL,
-  "deskripsi" VARCHAR NOT NULL,
-  "harga" INTEGER NOT NULL CHECK(harga > 0),
-  "url_gambar" VARCHAR NOT NULL,
-  "stok" INTEGER NOT NULL CHECK(stok > 0) DEFAULT 0
-)');
+// Drop transaction table.
+$db->query('DROP TABLE IF EXISTS "Transaksi"');
+
+// Drop dorayaki table.
+$db->query('DROP TABLE IF EXISTS "Dorayaki"');
+
+// Drop tokens table.
+$db->query('DROP TABLE IF EXISTS "Tokens"');

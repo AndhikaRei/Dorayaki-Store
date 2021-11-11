@@ -1,0 +1,7 @@
+.not-found-body{
+    display: flex;
+    -ms-flex-line-pack: center !important;
+    align-content: center !important;
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}

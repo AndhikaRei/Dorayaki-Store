@@ -31,29 +31,89 @@ menambah varian dorayaki dan mengubah stok dorayaki. Aplikasi dibuat menggunakan
 ## Requirements
 - [PHP 8](https://www.python.org/downloads/)
 
-## Instalasi
+## Instalasi dan Menjalankan Server
+### XAMPP
+1. Jika anda belum mempunyai XAMPP maka install XAMPP terlebih dahulu menurut OS yang anda punya. Cara penginstalan bisa cek [disini](https://www.apachefriends.org/download.html)
+2. Jalankan XAMPP.
+3. Pindahkan isi dari repositori ini ke path htdocs dari xampp yang telah diinstall. 
+4. Pastikan anda menginstall PHP (bisa include di XAMPP atau secara terpisah) dan pastikan versi dari php adalah versi 8.xx
+5. Carilah file "php.ini" dan cari semua line dengan kata kunci "sqlite", hilangkan ";" di depan line tersebut agar php bisa menggunakan extension sqlite3.
+6. Jalankan ulang XAMPP.
+7. Bukalah index dari aplikasi ini melalui melalui path htdocs kalian, anda harusnya diarahkan ke halaman login/register.
+8. Lakukanlah seeding dengan mengakses
+   - [path htdocs XAMPP kalian]/db/down.php, dilanjut dengan
+   - [path htdocs XAMPP kalian]/db/down.php, dan dilanjut dengan
+   - [path htdocs XAMPP kalian]/db/seed.php.
+9. Kembalilah ke halaman index aplikasi ini, lalu anda bisa login sebagai admin atau sebagai user, atau anda bisa melakukan register akun baru.
+10. Selamat mencoba
 
-## Menjalankan Server
+### Docker
+1. Jika anda belum mempunyai docker maka install docker terlebih dahulu menurut OS yang anda punya. Cara penginstalan bisa cek [disini](https://docs.docker.com/engine/install/)
+2. Apabila sudah terinstal, jalankan command dibawah ini. 
+```
+docker-compose -f deployments/compose/docker-compose.yml up
+```
+3. Bukalah http://localhost:8080/ di browser favorit anda. Anda harusnya diarahkan ke halaman login/register saat mengakses url tersebut.
+4. Lakukanlah seeding database dengan mengakses url 
+   - http://localhost:8080/db/down.php, dilanjut dengan
+   - http://localhost:8080/db/up.php, dan dilanjut dengan
+   - http://localhost:8080/db/seed.php.
+5. Kembalilah ke http://localhost:8080/ lalu anda bisa login sebagai admin atau sebagai user, atau anda bisa melakukan register akun baru.
+6. Selamat mencoba.
 
 ## Screen Capture 
 ### Login
+![Login](screenshot/Login.png)
 ### Register
+![Register](screenshot/Register.png)
 ### Dashboard
+![Dashboard Admin](screenshot/Admin_Home.png)
+![Dashboard User](screenshot/User_Home.png)
 ### Hasil Pencarian
+![Search](screenshot/Search.png)
 ### Penambahan Varian Dorayaki
+![Add Dorayaki](screenshot/AddDorayakiVariant.png)
 ### Detail Varian Dorayaki
-### Pembelian/Pengubahan Stok Dorayaki
+![Detail Dorayaki](screenshot/Admin_DorayakiDetail.png)
+![Detail Dorayaki](screenshot/User_DorayakiDetail.png)
+### Pembelian Dorayaki
+![Buy Dorayaki](screenshot/BuyDorayaki.png)
+### Pengubahan Stok Dorayaki
+![Change Stock Dorayaki](screenshot/ChangeStockDorayaki.png)
+### Riwayat Pengubahan Stok Dorayaki
+![History Dorayaki Admin](screenshot/AdminHistoryEditDorayaki.png)
+![History Dorayaki All User](screenshot/HistoryDorayakiAllUser.png)
+### Riwayat Pembelian Dorayaki
+![DorayakiBuyHistory](screenshot/DorayakiBuyHistory.png)
 
 ## Pembagian Tugas
 Server-side
-Login : 13519xxx, 13519xxx
-Register : 13519xxx
-(Lanjutkan …)
+- Login : 13519167
+- Register : 13519167
+- Dashboard : 13519026, 13519043
+- Hasil Pencarian : 13519026, 13519043
+- Penambahan Varian Dorayaki Baru : 13519043 
+- Detail Varian Dorayaki : 13519043
+- Pembelian Dorayaki : 13519043, 13519167
+- Pengubahan Stok Dorayaki : 13519043, 13519167
+- Riwayat Pengubahan Stok Dorayaki : 13519043, 13519167
+- Riwayat Pembelian Dorayaki : 13519043, 13519167
+- Docker : 13519043
 
 Client-side
-Login : 13519xxx, 13519xxx
-Register : 13519xxx
-(Lanjutkan…)
+- Login : 13519167
+- Register : 13519167
+- Dashboard : 13519026
+- Hasil Pencarian : 13519026
+- Penambahan Varian Dorayaki Baru : 13519043
+- Detail Varian Dorayaki : 13519043, 13519167
+- Pembelian Dorayaki : 13519043, 13519167
+- Pengubahan Stok Dorayaki : 13519043
+- Riwayat Pengubahan Stok Dorayaki : 13519043, 13519167
+- Riwayat Pembelian Dorayaki : 13519043, 13519167
+- Navigasi : 13519026
+- Data Expire Time : 13519167
+- Responsive Design : 13519026, 13519043, 13519167
 
 ## Panduan Pengerjaan
 Berikut adalah hal yang harus diperhatikan untuk pengumpulan tugas ini:

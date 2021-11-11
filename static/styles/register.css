@@ -22,7 +22,7 @@ Content
   grid-template-areas: "image title"
                        "image form";
   grid-template-columns: 2fr 1fr;
-  color: #0C145A;
+  color: #14279B;
   max-width: 100%;
   margin: auto;
 }
@@ -95,7 +95,7 @@ Content
   margin-bottom: 0rem;
   font-size: 1.125rem;
   line-height: 1.75rem;
-  color: #7E8CAC;
+  color: #5C7AEA;
 }
 
 .register hr {
@@ -145,8 +145,8 @@ Content
   vertical-align: middle;
   border: 1px solid transparent;
   font-size: 1rem;
-  background-color: #4D17E2;
-  padding: 0.75rem 3rem;
+  background-color: #14279B;
+  padding: 0.75rem 1rem;
   color: white;
   margin: auto;
   margin-top: 1rem;

@@ -10,10 +10,13 @@ Container
 
 .container {
     padding-right: 10px;
-    padding-left: 16px;
+    padding-left: 10px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
+    min-height: 92vh;
+    margin-top: 100px; /*tinggi-navbar*/
+    padding-bottom: 50px; /*tinggi-navbar*/       
 }
 
 @media (min-width: 1300px) {
@@ -35,7 +38,6 @@ Container
     .container {
         padding-right: 70px;
         padding-left: 70px;
-        padding-top: 3.75rem;
     }
 }
 
@@ -76,7 +78,7 @@ body {
 /* Add-Varian Header */
 .content-header {
     padding-bottom: 3.125rem;
-    color: #0C145A;
+    color: #14279B;
 }
 
 .content-header h2 {
@@ -96,7 +98,29 @@ body {
 /*========================= 
 Button
 ===========================*/
+.btn-disabled{
+    cursor: not-allowed !important;
+    opacity: 30%;
+    transition: 0.3s;
+}
+
 .btn-add {
+    border-radius: 50rem !important;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: #5cb85c;
+    padding: 0.75rem 1rem;
+    color: white;
+    cursor: pointer;
+    margin-left : 0;
+    display: block;
+    width : 200px;
+}
+
+.btn-delete {
     border-radius: 50rem !important;
     text-align: center;
     vertical-align: middle;
@@ -104,13 +128,15 @@ Button
     border: 1px solid transparent;
     text-decoration: none;
     font-size: 1rem;
-    background-color: #5cb85c;
-    padding: 0.75rem 3rem;
+    background-color: #d9534f;
+    padding: 0.75rem 1rem;
     color: white;
     width: 100%;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
-.btn-edit-stock {
+.btn-edit {
     border-radius: 50rem !important;
     text-align: center;
     vertical-align: middle;
@@ -119,9 +145,11 @@ Button
     text-decoration: none;
     font-size: 1rem;
     background-color: #f0ad4e;
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 1rem;
     color: white;
     width: 100%;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
 .btn-details {
@@ -133,21 +161,22 @@ Button
     text-decoration: none;
     padding: 0.5rem 1.5rem;
     width: 100%;
-    color: #0C145A;
+    color: #14279B;
     background-color: #E7EAF5;
     font-size: 0.875rem;
     line-height: 1.25rem;
+    cursor: pointer;
     cursor: pointer;
 }
 
 .btn-details-active{
     color: #FFFFFF;
-    background-color: #0C145A;
+    background-color: #14279B;
 }
 
 .btn-details:hover{
     color: #FFFFFF;
-    background-color: #0C145A;
+    background-color: #14279B;
 }
 
 
@@ -175,7 +204,7 @@ Form
     line-height: 1.75rem;
     font-weight: 500;
     margin-bottom: 0.625rem;
-    color: #0C145A;
+    color: #14279B;
 }
 
 .form-input {
@@ -252,4 +281,53 @@ Search Bar
     color: #212529;
     display: inline;
     cursor: pointer;
+}
+
+/*========================= 
+Error Alert
+===========================*/
+.alert-error {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    border-radius: 1rem !important;
+    margin-bottom: 1rem;
+}
+.alert-close{
+    margin-top: 0.2rem;
+    margin-left: 15px;
+    color: #721c24;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/*========================= 
+Global
+===========================*/
+.hidden {
+    display: none;
+}
+
+.footer{
+    position:relative;
+    bottom: 0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 50px;
+    background: #E6E6E6;
+    color: #3D56B2;
+    font-size: 16px;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

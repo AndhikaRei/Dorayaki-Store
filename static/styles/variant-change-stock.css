@@ -9,8 +9,8 @@ Content
                          "image dorayaki"
                          "none stock";
     grid-template-columns: 0.8fr 2fr;
-    grid-template-rows: 1fr 1.5fr 1fr;
-    color: #0C145A;
+    grid-template-rows: 1fr 1.4fr 0.5fr;
+    color: #14279B;
 }
 .detail-image {
     padding-bottom: 1.875rem;
@@ -70,7 +70,7 @@ Content
     margin-bottom: 0rem;
     font-size: 1.125rem;
     line-height: 1.75rem;
-    color: #7E8CAC;
+    color: #5C7AEA;
 }
 
 .detail hr {
@@ -146,8 +146,8 @@ Content
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: #F9FAFF;
+    color: #3D56B2;
+    background-color: #E6E6E6;
     border-radius: 1.625rem !important;
 }
 
@@ -155,15 +155,16 @@ Content
 .btn-add {
     border-radius: 50rem !important;
     text-align: center;
-    vertical-align: middle;
     background-color: transparent;
     border: 1px solid transparent;
     text-decoration: none;
     font-size: 1rem;
     background-color: #5cb85c;
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 1rem;
     color: white;
-    width: 100%;
+    display: block;
+    width : 200px;
+    margin-left : 0;
 }
 
 .btn-add-stock {
@@ -174,9 +175,10 @@ Content
     border: 1px solid transparent;
     text-decoration: none;
     font-size: 0.9rem;
-    background-color: #4D17E2;
+    background-color: #14279B;
     padding: 0.3rem 1rem;
     color: white;
+    cursor: pointer;
 }
 
 .btn-reduce-stock {
@@ -190,6 +192,7 @@ Content
     background-color: #d9534f;
     padding: 0.3rem 1rem;
     color: white;
+    cursor: pointer;
 }
 .btn-edit {
     border-radius: 50rem !important;
@@ -200,9 +203,17 @@ Content
     text-decoration: none;
     font-size: 1rem;
     background-color: #f0ad4e;
-    padding: 0.75rem 3rem;
+    padding: 0.75rem 1rem;
     color: white;
     width: 100%;
+    cursor: pointer;
+    width: 200px;
+    margin-top: 0;
+}
+.btn-edit:disabled{
+    cursor: not-allowed !important;
+    opacity: 30%;
+    transition: 0.3s;
 }
 
 @media (max-width: 576px) {
@@ -226,10 +237,10 @@ Detail buys page
                          "edit edit";
     grid-template-columns: 1.25fr 1fr;
     grid-template-rows: 1fr 1fr;
-    margin-top: -2.5rem;
+    margin-top: -1.5rem;
     padding-left: 1rem;
 }
-@media (max-width: 576px) {
+@media (max-width: 700px) {
     .detail-change-stock {
         display: grid;
         grid-template-areas: "edit-stock"
@@ -252,7 +263,7 @@ Detail buys page
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
+    color: #3D56B2;
     background-color: #fff;
     background-clip: padding-box;
     border: 1px solid #ced4da;

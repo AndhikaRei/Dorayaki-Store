@@ -17,9 +17,16 @@ const registerButton = document.getElementById("btn-register");
 /*--------------------------------------------------------------
 # State
 --------------------------------------------------------------*/
-let emailValid = true;
-let usernameValid = true;
-let pwdValid = true;
+let emailValid = false;
+let usernameValid = false;
+let pwdValid = false;
+
+/*--------------------------------------------------------------
+# State & Other Checking 
+--------------------------------------------------------------*/
+// User cannot be logged in.
+// If logged in, redirect to dashboard
+checkLogin(true)
 
 /*--------------------------------------------------------------
 # Functions.
@@ -163,7 +170,11 @@ registerButton.addEventListener("click", (e) => {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange=function() {
     if (this.readyState == 4 && this.status == 200) {
-      window.location = "../../variant-change-stock.html";
+      console.log(this.responseText);
+      res = JSON.parse(this.responseText);
+      if (res.status == "success") {
+        window.location = "/";
+      }
     }
   }
 

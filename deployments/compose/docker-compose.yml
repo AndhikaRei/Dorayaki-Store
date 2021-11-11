@@ -1,0 +1,13 @@
+# docker-compose.yml
+version: '3'
+services:
+  php-dorayaki-server:
+    container_name: php-dorayaki-server
+    volumes:
+      - ../../:/var/www/html/app:z
+    build: 
+        context: ../../
+        dockerfile: builds/server/Dockerfile
+    ports: 
+      - 8080:80
+    restart: on-failure

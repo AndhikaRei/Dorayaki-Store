@@ -22,8 +22,12 @@ Content
     border-color: #dee2e6;
 }
 
+.table-title{
+    color: #14279B;
+}
+
 .table-heading{
-    color: #0C145A;
+    color: #14279B;
     text-align: left !important;
 }
 
@@ -52,14 +56,14 @@ Content
     font-weight: 500;
     text-align: left !important;
     margin: 0rem;
-    color: #0C145A;
+    color: #14279B;
 }
 
 .transaksi-other-info {
     font-weight: 500;
     text-align: left !important;
     margin: 0rem;
-    color: #0C145A;
+    color: #14279B;
 }
 
 .transaksi-price{
@@ -68,7 +72,7 @@ Content
     font-weight: 400;
     text-align: left !important;
     margin: 0rem;
-    color: #7E8CAC;
+    color: #5C7AEA;
 }
 
 .list-buy-tab {

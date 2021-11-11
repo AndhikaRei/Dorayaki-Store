@@ -1,0 +1,114 @@
+.dashboard-title{
+    font-size: 36px;
+    color: #5C7AEA;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.dashboard-title-1{
+    color: #14279B;
+}
+.dashboard-title-2{
+    color: #3D56B2;
+}
+
+.dorayaki-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 1rem;
+}
+
+.dorayaki-list > a {
+    background: #EDE7F6;
+    border-radius: 1rem;
+    text-decoration: none;
+    overflow-x:hidden !important;
+    padding: 1em;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+}
+
+.dorayaki-item{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.image-container{
+    width: 100%;
+    height: 250px;
+    display: block;
+    overflow: hidden;
+}
+
+.image-container img{
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.dorayaki-item:hover .image-container img{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.dorayaki-item:focus .image-container img {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+}
+
+.dorayaki-sold{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    font-size: 14px;
+    color: #9e9d9d;
+    margin-block-start: 1em;
+    margin-block-end: 0.2em;
+    text-align: center;
+}
+
+.dorayaki-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+    line-height: 32px;
+    overflow: hidden;
+    min-height: 70px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-block-start: 0em;
+    margin-block-end: 0.2em;
+    text-align: center;
+}
+
+.dorayaki-price-container{
+    z-index: 1;
+    position: absolute;
+    background-color: #3D56B2;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 20px ;
+    border-radius: 5px;
+    margin-top: 180px;
+}
+
+.dorayaki-price{
+    font-size: 16px;
+    color: white;
+    margin-block-start: 0.2em;
+    margin-block-end: 0.2em;
+}
+
+@media only screen and (min-width: 768px) {
+    .dashboard-title{
+        font-size: 48px;
+    }
+}
