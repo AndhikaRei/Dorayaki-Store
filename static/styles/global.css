@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*========================= 
+Container
+===========================*/
+
+.container {
+    padding-right: 10px;
+    padding-left: 16px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 1300px) {
+    .container {
+        max-width: 1300px;
+    }
+}
+
+/* Small devices */
+@media (min-width: 576px) {
+    .container {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+/* Large devices */
+@media (min-width: 992px) {
+    .container {
+        padding-right: 70px;
+        padding-left: 70px;
+        padding-top: 3.75rem;
+    }
+}
+
+/* Xtra-Large devices */
+@media (min-width: 1200px) {
+    .container {
+        padding-right: 100px;
+        padding-left: 100px;
+    }
+}
+
+/*========================= 
+Content
+===========================*/
+
+body {
+    background-color: #FBFCFD;
+}
+
+.content-body {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1.625rem;
+}
+
+/* Small devices */
+@media (max-width: 576px) {
+    .content-body {
+        padding: 0rem;
+        border-radius: 0rem;
+    }
+
+    body {
+        background-color: white;
+    }
+}
+
+/* Add-Varian Header */
+.content-header {
+    padding-bottom: 3.125rem;
+    color: #0C145A;
+}
+
+.content-header h2 {
+    margin-bottom: 0.625rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: left !important;
+}
+
+.content-header p {
+    margin-bottom: 0rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+/*========================= 
+Button
+===========================*/
+.btn-add {
+    border-radius: 50rem !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: #5cb85c;
+    padding: 0.75rem 3rem;
+    color: white;
+    width: 100%;
+}
+
+.btn-edit-stock {
+    border-radius: 50rem !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    font-size: 1rem;
+    background-color: #f0ad4e;
+    padding: 0.75rem 3rem;
+    color: white;
+    width: 100%;
+}
+
+.btn-details {
+    border-radius: 50rem !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    padding: 0.5rem 1.5rem;
+    width: 100%;
+    color: #0C145A;
+    background-color: #E7EAF5;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    cursor: pointer;
+}
+
+.btn-details-active{
+    color: #FFFFFF;
+    background-color: #0C145A;
+}
+
+.btn-details:hover{
+    color: #FFFFFF;
+    background-color: #0C145A;
+}
+
+
+@media (max-width: 576px) {
+    .btn-add {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+
+    .btn-edit-stock {
+        display: inline-block;
+        margin-top: 0.5rem;
+    }
+}
+
+/*========================= 
+Form
+===========================*/
+.form-divider {
+    padding-top: 1.875rem;
+}
+
+.form-label {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    margin-bottom: 0.625rem;
+    color: #0C145A;
+}
+
+.form-input {
+    display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 50rem !important;
+}
+
+.form-button {
+    padding-top: 3.125rem;
+}
+
+@media (max-width: 576px) {
+    .form-divider {
+        padding-top: 1rem;
+    }
+
+    .form-label {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+    }
+
+    .form-input {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .form-button {
+        padding-top: 1.5rem;
+    }
+
+    .add-variant-header {
+        padding-bottom: 0.5rem;
+    }
+
+    .add-variant-header h2 {
+        margin-bottom: 0.3rem;
+    }
+}
+
+/*========================= 
+Search Bar
+===========================*/
+.search-input {
+    display: inline;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    color: #212529;
+    background-color: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 1rem !important;
+    min-width: 40%;
+}
+.btn-search {
+    display: inline;
+    border-radius: 1rem !important;
+    vertical-align: middle;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-decoration: none;
+    background-color: #FBFCFD;
+    padding: 0.375rem 1rem;
+    color: #212529;
+    display: inline;
+    cursor: pointer;
+}

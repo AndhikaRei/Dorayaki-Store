@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <!-- CSS -->
+        <link rel="stylesheet" href="./static/styles/global.css">
+        <link rel="stylesheet" href="./static/styles/add-variant.css">
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
+        <title>Add Variant</title>
+    </head>
+
+    <body>
+        <!-- Navbar -->
+        <section>
+        </section>
+        <!-- Content -->
+        <section class="add-variant">
+            <div class="container">
+                <!-- Header -->
+                <div class="content-header">
+                    <h2>Tambah Varian</h2>
+                </div>
+                <!-- Body -->
+                <div class="content-body">
+                    <form action="" enctype="multipart/form-data">
+                        <div class="form-divider" style="padding-top: 0rem;">
+                            <label for="name" class="form-label">Nama</label>
+                            <input type="text" class="form-input" id="name" name="name"  aria-describedby="name" placeholder="Masukkan nama varian" required>
+                        </div>
+                        <div class="form-divider">
+                            <label for="photo" class="form-label">Gambar</label>
+                            <input type="file" accept="image/*" class="form-input" id="photo" name="photo" aria-describedby="photo" placeholder="Masukkan foto dorayaki" required>
+                            <img id="photo-dorayaki" width="280" height="380" class="img-dorayaki" hidden>
+                        </div>
+                        <div class="form-divider">
+                            <label for="description" class="form-label">Deksripsi</label>
+                            <textarea class="form-input" id="description" name="description" aria-describedby="description" placeholder="Masukkan deskripsi dorayaki" required> </textarea>
+                        </div>
+                        <div class="form-divider">
+                            <label for="price" class="form-label">Harga</label>
+                            <input type="number" min="0" class="form-input" id="price" name="price" aria-describedby="price" placeholder="Masukkan harga dorayaki" required>
+                        </div>
+                        <div class="form-divider">
+                            <label for="stock" class="form-label">Stok Awal</label>
+                            <input type="number" min="0" class="form-input" id="stock" name="stock" aria-describedby="stock" placeholder="Enter your phone number" required>
+                        </div>
+                        <div class="form-button">
+                             <button role="button" type="submit" class="btn-add">Beli</button>
+                        </div>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
+
+        <footer style="text-align: center; margin-top: 2rem;"> 
+            Footer Sementara LOL
+        </footer>
+
+        <!-- Core Script -->
+        <script src="./static/scripts/add-variant.js"></script>
+    </body>
+
+</html>

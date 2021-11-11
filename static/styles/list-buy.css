@@ -1,0 +1,89 @@
+/*========================= 
+Content
+===========================*/
+
+/* Table */
+.table-container {
+    overflow: auto !important;
+    background-color: #FFFFFF;
+    padding: 1.25rem 1.875rem;
+    border-radius: 1rem;
+    max-width: 1047px;
+}
+
+.table-transaksi {
+    caption-side: bottom;
+    border-collapse: collapse;
+    border-bottom-width: 0;
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    vertical-align: top;
+    border-color: #dee2e6;
+}
+
+.table-heading{
+    color: #0C145A;
+    text-align: left !important;
+}
+
+.table-row{
+    vertical-align: middle !important;
+}
+
+.image-transaksi{
+    float: left !important;
+    margin-right: 1rem !important;
+    margin-bottom: 1rem !important;
+}
+
+.transaksi-important {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.transaksi-name {
+    text-decoration: none;
+    white-space: nowrap;
+    display: block;
+    width: 135px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+    text-align: left !important;
+    margin: 0rem;
+    color: #0C145A;
+}
+
+.transaksi-other-info {
+    font-weight: 500;
+    text-align: left !important;
+    margin: 0rem;
+    color: #0C145A;
+}
+
+.transaksi-price{
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 400;
+    text-align: left !important;
+    margin: 0rem;
+    color: #7E8CAC;
+}
+
+.list-buy-tab {
+    margin-bottom: 1.875rem;
+}
+
+
+/* Small devices */
+@media (max-width: 576px) {
+    .transaksi-name .table-heading .transaksi-other-info{
+        font-size: 0.5rem !important;
+        line-height: 0.75rem !important;
+    }
+    .transaksi-price{
+        font-size: 0.5rem;
+        line-height: 0.75rem;
+    }
+}

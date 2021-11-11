@@ -1,0 +1,181 @@
+/*========================= 
+Content
+===========================*/
+
+/* Detail Body */
+.detail-body {
+    display: grid;
+    grid-template-areas: "image title"
+                         "image dorayaki"
+                         "none button"
+                         "stock stock";
+    grid-template-columns: 0.8fr 2fr;
+    grid-template-rows: 1fr 1.5fr 0.1fr 0.2fr;
+    color: #0C145A;
+}
+.detail-image {
+    padding-bottom: 1.875rem;
+    grid-area: image;
+    align-items: center;
+    padding-right: 1rem;
+    padding-bottom: 0rem;
+    text-align: start !important;
+}
+.img-dorayaki {
+    max-width: 100%;
+    height: auto;
+    border-radius: 1.625rem;
+}
+@media (max-width: 576px) {
+    .detail-body {
+        grid-template-areas: "image title"
+                             "dorayaki dorayaki"
+                             "button button"
+                             "stock stock";
+        grid-template-rows: 1fr 1.5fr 1fr;
+    }
+    .detail-image {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.detail-title {
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 576px) {
+    .detail-title{
+        grid-area: title;
+    }
+}
+
+@media (max-width: 576px) {
+    .detail-title{
+        grid-area: title;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.detail-title div h2 {
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 700;
+    text-align: left !important;
+}
+
+.detail-title div p {
+    margin-bottom: 0rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    color: #7E8CAC;
+}
+
+.detail hr {
+    margin-top: 1rem;
+    margin-bottom: 0rem !important;
+    margin: 0;
+    background-color: #E7EAF5;
+    border: 0.2;
+    opacity: 1;
+    width: 95%;
+}
+
+.detail-dorayaki {
+    grid-area: dorayaki;
+
+    display: grid;
+    grid-template-areas: "stok jual"
+                         "deskripsi deskripsi";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1.5fr;
+    padding-left: 1rem;
+}
+
+.detail-dorayaki .text-desc {
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .detail-image {
+        padding-right: 0.75rem;
+        padding-bottom: 0rem;
+        text-align: start !important;
+    }
+
+    .detail-title {
+        padding-left: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    .detail-title div h2 {
+        font-size: 1.75rem;
+        line-height: 2rem;
+        font-weight: 700;
+    }
+
+    .detail-title div p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .detail-dorayaki {
+        padding-left: 0rem;
+    }
+}
+
+
+.stok {
+    grid-area: stok;
+}
+.sold {
+    grid-area: jual;
+}
+
+.desc {
+    grid-area: deskripsi;
+}
+
+.card-text {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #F9FAFF;
+    border-radius: 1.625rem !important;
+}
+
+@media (max-width: 567px) {
+
+    .detail-title div h2 {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+    }
+
+    .detail-title div p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    .detail-dorayaki .text-desc {
+        font-size: 1rem;
+        line-height: 1.25rem;
+        font-weight: 600;
+    }
+}
+
+/* Button Section */
+.detail-btn {
+    grid-area: button;
+    margin-top: -2.5rem;
+}
