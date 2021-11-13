@@ -15,7 +15,7 @@ $db->query('CREATE TABLE IF NOT EXISTS "Akun" (
 // Create dorayaki table.
 $db->query('CREATE TABLE IF NOT EXISTS "Dorayaki" (
   "id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-  "nama" VARCHAR NOT NULL,
+  "nama" VARCHAR UNIQUE NOT NULL,
   "deskripsi" VARCHAR NOT NULL,
   "harga" INTEGER NOT NULL CHECK(harga >= 0),
   "url_gambar" VARCHAR NOT NULL,

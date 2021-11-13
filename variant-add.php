@@ -1,3 +1,7 @@
+<?php 
+require_once __DIR__."/api/dorayaki/soapGetAllDorayakiName.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,12 +32,25 @@
 					<h2>Tambah Varian</h2>
 				</div>
 				<!-- Body -->
-				
+				<?php if (isset($err)):?>
+					<div class="alert-error">
+						<span class="alert-close" onclick="this.parentElement.style.display='none';">
+							<i class="fas fa-times"></i>
+						</span>
+						<?= $err ?>
+					</div>
+				<?php endif;?>
 				<div class="content-body" id="content-body">
 					<form action="?" enctype="multipart/form-data" method="POST" id="form-create">
 						<div class="form-divider" style="padding-top: 0rem;">
 							<label for="name" class="form-label">Nama</label>
-							<input type="text" class="form-input" id="name" name="name"  aria-describedby="name" placeholder="Masukkan nama varian">
+							<select type="text" class="form-input" id="name" name="name"  aria-describedby="name" placeholder="Pilih nama varian">
+								<?php if (isset($dorayakiName)):?>
+									<?php foreach ($dorayakiName->return as $doraSingleName):?>
+										<option value="<?= $doraSingleName ?>"><?= $doraSingleName ?></option>
+									<?php endforeach; ?>
+								<?php endif;?>
+							</select>
 						</div>
 						<div class="form-divider">
 							<label for="photo" class="form-label">Gambar</label>
@@ -48,10 +65,7 @@
 							<label for="price" class="form-label">Harga</label>
 							<input type="number" min="0" class="form-input" id="price" name="price" aria-describedby="price" placeholder="Masukkan harga dorayaki" required>
 						</div>
-						<div class="form-divider">
-							<label for="stock" class="form-label">Stok Awal</label>
-							<input type="number" min="0" class="form-input" id="stock" name="stock" aria-describedby="stock" placeholder="Masukkan stok awal" required>
-						</div>
+						<input type="hidden" value="0" id="stock" name="stock">
 						<div class="form-button">
 							<button type="submit" class="btn-add" id="add-variant">Tambah varian</button>
 						</div>

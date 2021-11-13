@@ -310,6 +310,30 @@ Error Alert
     transition: 0.3s;
 }
 
+.alert-success {
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    color: white;
+    background-color: #14279B;
+    border: 1px solid #14279B;
+    border-radius: 1rem !important;
+    margin-bottom: 1rem;
+}
+.alert-close-success {
+    margin-top: 0.2rem;
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
 /*========================= 
 Global
 ===========================*/

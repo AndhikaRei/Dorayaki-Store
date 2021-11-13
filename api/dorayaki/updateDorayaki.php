@@ -31,15 +31,13 @@ if (!dorayakiPayloadValidationUpdate()){
 
 // Capture request payload.
 $id = $_POST['id'];
-$nama = $_POST['name'];
 $deskripsi = $_POST['description'];
 $harga = $_POST['price'];
-$stock = $_POST['stock'];
 
 // Logic validation.
-if ($harga < 0 || $stock < 0){
+if ($harga < 0 ){
 	http_response_code(400);
-	$res = [ "error" => [ "code" => 400, "message" => "Price and stock must not negative"]];
+	$res = [ "error" => [ "code" => 400, "message" => "Price must not negative"]];
 	exit(json_encode($res));
 }
 
@@ -83,20 +81,16 @@ if (isset($_FILES['photo']) && $_FILES['photo']!="" && $_FILES['photo']['tmp_nam
 // Prepating query.
 $query = $db->prepare(
 	"   UPDATE `Dorayaki` 
-        SET `nama`=:nama, 
-            `deskripsi`=:deskripsi, 
+        SET `deskripsi`=:deskripsi, 
             `harga`=:harga, 
-            `url_gambar`=:url_gambar, 
-            `stok`=:stok
+            `url_gambar`=:url_gambar
         WHERE
             `id`=:id 
 	"
 );
-$query->bindParam(':nama', $nama);
 $query->bindParam(':deskripsi', $deskripsi);
 $query->bindParam(':harga', $harga);
 $query->bindParam(':url_gambar', $image_filename);
-$query->bindParam(':stok', $stock);
 $query->bindParam(':id', $id);
 
 // Saving to database and validate the process. 

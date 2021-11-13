@@ -29,6 +29,9 @@ const btnEditStock = document.getElementById('btn-edit-stock');
 # State
 --------------------------------------------------------------*/
 const id = new URLSearchParams(window.location.search).get("id");
+// Setup form hidden value.
+
+
 
 /*--------------------------------------------------------------
 # State & Other Checking
@@ -77,6 +80,12 @@ const shortPolling = () => {
                 desc.innerText=dorayakiDescription;
                 image.src = `./static/images/${dorayakiPicture}`
 
+                // Modify hidden attribute
+                dorayakiId.value = id;
+                dorayakiNama.value = dorayakiName;
+                const stock = document.getElementById('stock');
+                jumlahItem.value = stock.value;
+
             } else {
                 window.location = "../../404.php";
             }
@@ -101,6 +110,7 @@ const checkValidChangeStock = () => {
             btnEditStock.setAttribute('disabled', "");
         }
      }
+    jumlahItem.value = stock.value;
 }
 
 /*--------------------------------------------------------------
@@ -139,55 +149,3 @@ reduceButton.addEventListener("click", () => {
         }
     }
 });
-// Add event listener for creating transaction.
-btnEditStock.addEventListener("click", (event)=> {
-    event.preventDefault();
-
-    // Reeget the dom and reeset stock value.
-    const nama = document.getElementById('name');
-    const stock = document.getElementById('stock');
-
-    // Setup form hidden value.
-    dorayakiId.value = id;
-    dorayakiNama.value = nama.innerText;
-    jumlahItem.value = stock.value;
-
-    // Send the data.
-    const formData = new FormData(formChangeStock);
-    var xhttp = new XMLHttpRequest();
-
-    xhttp.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            // Catch payload;
-            let res;
-            try {
-                res = JSON.parse(this.responseText);
-            } catch {
-                res = {
-                    "error": {
-                        "message": this.responseText
-                    }
-                };
-            }
-
-            if (this.status == 200) {
-                window.location = "../../variant-detail.php?id=" + id;
-                console.log(res)
-            } else {
-                contentBody.insertAdjacentHTML("beforebegin", `
-                <div class="alert-error">
-                    <span class="alert-close" onclick="this.parentElement.style.display='none';"><i class="fas fa-times"></i></span>
-                    ` + res.error.message + `
-                </div>
-                `);
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    }
-
-    xhttp.open("POST", "../../api/transaction/createTransaction.php", true);
-    xhttp.send(formData);
-})

@@ -35,19 +35,17 @@ function dorayakiPayloadValidation(){
  */ 
 function dorayakiPayloadValidationUpdate(){
     // Validate existence.
-    if (!isset($_POST['name']) || !isset($_POST['description']) || !isset($_POST['price']) 
-        ||!isset($_POST['id']) || !isset($_POST['stock'])){
+    if (!isset($_POST['description']) || !isset($_POST['price']) ||!isset($_POST['id'])){
         return false;
     }    
 
     // Validate emptyness.
-    if ($_POST['name'] == "" || $_POST['description'] == "" || $_POST['price'] =="" 
-        || $_POST['id']=="" || $_POST['stock'] == ""){
+    if ( $_POST['description'] == "" || $_POST['price'] =="" || $_POST['id']=="" ){
         return false;
     }
 
     // Validate type.
-    if (!is_numeric(($_POST['price'])) || !is_numeric($_POST['stock']) || !is_numeric($_POST['id'])){
+    if (!is_numeric(($_POST['price'])) || !is_numeric($_POST['id'])){
         return false;
     }
 
@@ -64,6 +62,22 @@ function getDorayakiById($id){
     // Fetch from database.
     $statement = $db->prepare('SELECT * FROM "Dorayaki" WHERE "id" = ?');
     $statement->bindValue(1, $id);
+    $res = $statement->execute();
+
+    // Fetch data as associative array and validate data.
+    $data = $res->fetchArray(SQLITE3_ASSOC);
+    if (!$data){
+       return null;
+    }
+    return $data;
+}
+
+function getDorayakiByName($name){
+    global $db;
+
+    // Fetch from database.
+    $statement = $db->prepare('SELECT * FROM "Dorayaki" WHERE "id" = ?');
+    $statement->bindValue(1, $name);
     $res = $statement->execute();
 
     // Fetch data as associative array and validate data.

@@ -33,7 +33,7 @@
 					<form action="?" enctype="multipart/form-data" method="POST" id="form-edit">
 						<div class="form-divider" style="padding-top: 0rem;">
 							<label for="name" class="form-label">Nama</label>
-							<input type="text" class="form-input" id="name" name="name"  aria-describedby="name" placeholder="Masukkan nama baru varian">
+							<input type="text" class="form-input" id="name" name="name"  aria-describedby="name" disabled>
 						</div>
 						<div class="form-divider">
 							<label for="photo" class="form-label">Gambar</label>
@@ -50,7 +50,7 @@
 						</div>
 						<div class="form-divider">
 							<label for="stock" class="form-label">Stok</label>
-							<input type="number" min="0" class="form-input" id="stock" name="stock" aria-describedby="stock" placeholder="Masukkan stok baru dorayaki" required>
+							<input type="number"  class="form-input" id="stock" name="stock" aria-describedby="stock" disabled>
 						</div>
 						<div class="form-button">
 							<button type="submit" class="btn-edit" id="add-variant">Ubah varian</button>

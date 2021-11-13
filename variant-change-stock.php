@@ -1,3 +1,7 @@
+<?php 
+require_once __DIR__."/api/dorayaki/soapRequestChangeStock.php";
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,6 +27,22 @@
     <section class="detail">
         <div class="container">
             <!-- Body -->
+            <?php if (isset($succ)):?>
+                <div class="alert-success">
+                    <span class="alert-close-success" onclick="this.parentElement.style.display='none';">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <?= $succ ?>
+                </div>
+			<?php endif;?>
+            <?php if (isset($err)):?>
+                <div class="alert-error">
+                    <span class="alert-close" onclick="this.parentElement.style.display='none';">
+                        <i class="fas fa-times"></i>
+                    </span>
+                    <?= $err ?>
+                </div>
+			<?php endif;?>
             <div class="detail-body content-body" id="content-body">
                 <div class="detail-image">
                     <img src="" width="280" height="380" class="img-dorayaki" alt="" id="image">
@@ -55,21 +75,22 @@
                         </p>
                     </div>
                 </div>
-                <form class="detail-change-stock" action="" id="form-change-stock">
+                <form class="detail-change-stock" action="" id="form-change-stock" method="POST">
                     <!-- Hidden Input -->
                     <input type="hidden" name="dorayaki_id" id="dorayaki_id">
                     <input type="hidden" name="category" id="category" value="pengubahan">
                     <input type="hidden" name="dorayaki_nama" id="dorayaki_nama">
                     <input type="hidden" name="jumlah_item" id="jumlah_item">
+                    <input type="hidden" name="req" id="req" value="True">
 
                     <div class="edit-stock">
-                        <input id="stock" style="margin-bottom: 0.7rem;" name="stock" type=number disabled class="input-stock" value="0">
+                        <input id="stock" style="margin-bottom: 0.7rem;" name="stock" type=number disabled class="input-stock" value="0" min="0">
                         <label for="stock" class="labell">+(add),-(remove)</label>
                         <button type="button" class="btn-add-stock" name="add-stock" id="add-stock"><i class="fas fa-plus"></i> </button>
                         <button type="button" class="btn-reduce-stock" name="reduce-stock" id="reduce-stock"><i class="fas fa-minus"></i></button>
                     </div>
                     <div class="edit">
-                        <button class="btn-edit" id="btn-edit-stock" disabled>Ubah stok</button>
+                        <button type="submit" class="btn-edit" name="btn-edit-stock" id="btn-edit-stock" disabled>Ubah stok</button>
                     </div>
                 </form>
             </div>
