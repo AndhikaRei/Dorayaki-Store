@@ -65,6 +65,8 @@ window.addEventListener("load", ()=> {
                     <li class="functional-icon"><a  id="functional-icon" href="variant-add.php"><img  id="functional-icon-image" src="static/images/post-add.svg" alt="logo" class="add"></a></li>
                     <li ><a id="functional-menu" href="list-change-stock.php">Riwayat Perubahan Stock</a></li>
                     <li class="functional-icon"><a  id="functional-icon" href="list-change-stock.php"><img  id="functional-icon-image" src="static/images/history_icon.svg" alt="logo" class="add"></a></li>
+                    <li ><a id="functional-menu" href="./api/dorayaki/soapSyncronizeStock.php">Sinkronisasi Stok</a></li>
+                    <li class="functional-icon"><a  id="functional-icon" href="./api/dorayaki/soapSyncronizeStock.php"><img  id="functional-icon-image" src="static/images/sync.png" alt="logo" class="add"></a></li>
                     `
                 }else{
                     rightNavbar.innerHTML += 

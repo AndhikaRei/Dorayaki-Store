@@ -121,3 +121,26 @@ function updateDorayakiSoldStock($id, $newSold, $newStock){
     }
     return true;
 }
+
+function updateDorayakiStock($dorayakiName, $amount){
+    global $db;
+
+    // Updating data to database.
+    // Prepating query.
+    $query = $db->prepare(
+        "   UPDATE `Dorayaki` 
+            SET `stok`= `stok` + :amount
+            WHERE
+                `nama`=:nama 
+        "
+    );
+    $query->bindParam(':amount', $amount);
+    $query->bindParam(':nama', $dorayakiName);
+
+    // Saving to database and validate the process. 
+    $data = $query->execute();
+    if (!$data || $db->changes()==0) {
+	    return false;
+    }
+    return true;
+}
