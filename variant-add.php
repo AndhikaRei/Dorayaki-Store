@@ -45,10 +45,14 @@ require_once __DIR__."/api/dorayaki/soapGetAllDorayakiName.php";
 						<div class="form-divider" style="padding-top: 0rem;">
 							<label for="name" class="form-label">Nama</label>
 							<select type="text" class="form-input" id="name" name="name"  aria-describedby="name" placeholder="Pilih nama varian">
-								<?php if (isset($dorayakiName)):?>
-									<?php foreach ($dorayakiName->return as $doraSingleName):?>
-										<option value="<?= $doraSingleName ?>"><?= $doraSingleName ?></option>
-									<?php endforeach; ?>
+								<?php if (isset($dorayakiName) and !isset($err)):?>
+									<?php if (is_string($dorayakiName->return)):?>
+										<option value="<?= $dorayakiName->return ?>"><?= $dorayakiName->return ?></option>
+									<?php else:?>
+										<?php foreach ($dorayakiName->return as $doraSingleName):?>
+											<option value="<?= $doraSingleName ?>"><?= $doraSingleName ?></option>
+										<?php endforeach; ?>
+									<?php endif;?>
 								<?php endif;?>
 							</select>
 						</div>
