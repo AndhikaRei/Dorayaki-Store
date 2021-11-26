@@ -1,27 +1,13 @@
-# Monolithic Web Application
+# Dorayaki Store / Monolithic Web Application 
 ## Semester I Tahun 2021/2022 
 
-### Tugas Besar I IF3110 Milestone 1 Pengembangan Aplikasi Berbasis Web
+### Tugas Besar I & II IF3110 Milestone 1 Pengembangan Aplikasi Berbasis Web
 
 *Program Studi Teknik Informatika* <br />
 *Sekolah Teknik Elektro dan Informatika* <br />
 *Institut Teknologi Bandung* <br />
 
 *Semester I Tahun 2021/2022*
-
-## Deskripsi
-Aplikasi ini adalah web marketplace sederhana yang menjual produk dorayaki. Pengguna terdiri dari user
-dan admin. User dapat melihat varian dorayaki yang dijual dan membeli dorayaki tersebut. Admin dapat
-menambah varian dorayaki dan mengubah stok dorayaki. Aplikasi dibuat menggunakan Javascript, HTML, CSS, PHP, dan SqLite.
-
-## Fungsional Aplikasi
-1. Autentikasi Pengguna
-2. Pengelolaan Varian Dorayaki
-3. Manajemen Stok Dorayaki
-4. Melihat Daftar Varian Dorayaki
-5. Riwayat Perubahan Stok Dorayaki
-6. Pembelian Dorayaki
-7. Riwayat Pembelian Dorayaki
 
 ## Author
 1. Gde Anantha Priharsena (13519026)
@@ -37,7 +23,7 @@ menambah varian dorayaki dan mengubah stok dorayaki. Aplikasi dibuat menggunakan
 2. Jalankan XAMPP.
 3. Pindahkan isi dari repositori ini ke path htdocs dari xampp yang telah diinstall. 
 4. Pastikan anda menginstall PHP (bisa include di XAMPP atau secara terpisah) dan pastikan versi dari php adalah versi 8.xx
-5. Carilah file "php.ini" dan cari semua line dengan kata kunci "sqlite", hilangkan ";" di depan line tersebut agar php bisa menggunakan extension sqlite3.
+5. Carilah file "php.ini" dan cari semua line dengan kata kunci "sqlite","soapClient", hilangkan ";" di depan line tersebut agar php bisa menggunakan extension sqlite3.
 6. Jalankan ulang XAMPP.
 7. Bukalah index dari aplikasi ini melalui melalui path htdocs kalian, anda harusnya diarahkan ke halaman login/register.
 8. Lakukanlah seeding dengan mengakses
@@ -86,6 +72,38 @@ docker-compose -f deployments/compose/docker-compose.yml up
 ### Riwayat Pembelian Dorayaki
 ![DorayakiBuyHistory](screenshot/DorayakiBuyHistory.png)
 
+# Tubes 2
+## Deskripsi
+Aplikasi ini adalah web marketplace lanjutan dari tubes 1. Perbedaanya adalah dalam manajemen stok dan pembuatan dorayaki baru terintegrasi dengan pabrik (Dorayaki Factory Server/Client)
+
+## Fungsional Tambahan Aplikasi
+1. Request resep dorayaki yang ada di factory (Melewati interface supplier)
+2. Request penambahan stok dorayaki (Melewati interface supplier)
+3. Admin tidak bisa mengubah stok dorayaki kecuali request ke factory (Melewati interface supplier) dan tidak bisa mengubah nama dari suatu dorayaki 
+   
+## Pembagian Tugas
+Server-side
+- Request resep dorayaki : 13519043
+- Request tambah stok dorayaki : 13519043
+- Validasi terkait stok dan nama dorayaki : 13519043
+
+Client-side
+- Validasi terkait stok dan nama dorayaki : 13519043
+
+# Tubes 1
+## Deskripsi
+Aplikasi ini adalah web marketplace sederhana yang menjual produk dorayaki. Pengguna terdiri dari user
+dan admin. User dapat melihat varian dorayaki yang dijual dan membeli dorayaki tersebut. Admin dapat
+menambah varian dorayaki dan mengubah stok dorayaki. Aplikasi dibuat menggunakan Javascript, HTML, CSS, PHP, dan SqLite.
+## Fungsional Aplikasi
+1. Autentikasi Pengguna
+2. Pengelolaan Varian Dorayaki
+3. Manajemen Stok Dorayaki
+4. Melihat Daftar Varian Dorayaki
+5. Riwayat Perubahan Stok Dorayaki
+6. Pembelian Dorayaki
+7. Riwayat Pembelian Dorayaki
+
 ## Pembagian Tugas
 Server-side
 - Login : 13519167
@@ -115,17 +133,3 @@ Client-side
 - Data Expire Time : 13519167
 - Responsive Design : 13519026, 13519043, 13519167
 
-## Panduan Pengerjaan
-Berikut adalah hal yang harus diperhatikan untuk pengumpulan tugas ini:
-1. Buatlah grup pada Gitlab dengan format "IF3110-2021-KXX-01-YY", dengan XX adalah nomor kelas dan YY adalah nomor kelompok.
-2. Tambahkan anggota tim pada grup anda.
-3. **Fork** pada repository ini dengan organisasi yang telah dibuat.
-4. Ubah hak akses repository hasil Fork anda menjadi **private**.
-5. Silakan commit pada repository anda (hasil fork). Lakukan beberapa commit dengan pesan yang bermakna, contoh: `add register form`, `fix logout bug`, jangan seperti `final`, `benerin dikit`, `fix bug`. Disarankan untuk tidak melakukan commit dengan perubahan yang besar karena akan mempengaruhi penilaian (contoh: hanya melakukan satu commit kemudian dikumpulkan). Sebaiknya commit dilakukan setiap ada penambahan fitur. Commit dari setiap anggota tim akan mempengaruhi penilaian. Jadi, setiap anggota tim harus melakukan commit yang berpengaruh terhadap proses pembuatan aplikasi.
-6. Buatlah file README yang berisi:
-    * Deskripsi aplikasi web
-    * Daftar requirement
-    * Cara instalasi
-    * Cara menjalankan server
-    * Screenshot tampilan aplikasi (tidak perlu semua kasus, minimal 1 per halaman), dan 
-    * Penjelasan mengenai pembagian tugas masing-masing anggota (lihat formatnya pada bagian pembagian tugas).
